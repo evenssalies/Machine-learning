@@ -1,6 +1,4 @@
-# Causality _(in progress ...)_[^1]
-
-## What's in here? _(to be completed soon)_
+## What's in here? _(to be completed soon)_[^1]
 
 __Causes and effects.__ You'll find material on causal inference for problems where one's aim is to measure the effects of some more or less controlled _**X**_ on some _Y_. [...]
 
