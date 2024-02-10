@@ -31,4 +31,4 @@ print(housing.describe())                           # Stat de base des variables
 housing.hist(bins=50, figsize=(12, 8))
 plt.show()
 
-# Create a test set
+# Create a test set (set aside part of the data)
