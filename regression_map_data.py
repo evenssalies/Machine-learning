@@ -28,3 +28,6 @@ def load_housing_data():
     return pd.read_csv(Path("datasets/housing/housing.csv"))
 
 housing = load_housing_data()
+
+# Juste pour info :)
+housing.info()
