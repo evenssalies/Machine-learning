@@ -1,7 +1,7 @@
 # Géron (2022)
 #   Ch. 2, section "Instance-based versus model-based learning"
 #   Import the dataset
-#        Changer le working directory dans VSC !!!
+#        Vérifier le working directory dans VSC, /`datasets' ne devrait pas être dans /Productivity !!!
 
 from    pathlib import Path
 import  pandas as pd
