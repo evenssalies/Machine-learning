@@ -16,7 +16,7 @@ I firmly believe there are plenty of econometric methods that data scientists sh
 On (3):
 
 - Le Cun, Y. (2014) _Quand la machine apprend_, Odile Jacob;
-- Mallat, S. (2018) _Sciences des données et apprentissage en grande dimension_ -- Leçons inaugurales du Collège de France, fayard.
+- Mallat, S. (2018) _Sciences des données et apprentissage en grande dimension_ &ndash; Leçons inaugurales du Collège de France, fayard.
 - Sadin, E. (2023) _La vie spectrale_ -- Penser l'ère du métavers et des IA génératives, Grasset.
 
 ## Plan _(building ...)_
