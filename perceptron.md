@@ -1,5 +1,5 @@
-# Perceptron
-#   Evens Salies, v1: 02-12/2024
+## Perceptron
+###   Evens Salies, v1: 02-12/2024
 
 Exemple de Perceptron pour une classification dichotomique
 
