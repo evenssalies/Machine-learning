@@ -7,7 +7,7 @@ np.random.seed(21041971)
 class Perceptron:
     def __init__(self, input_size, learning_rate = 0.1):
         self.weights = np.random.rand(input_size)
-        self.bias = np.random.rand()
+        self.bias = 0
         self.learning_rate = learning_rate
 
     def predict(self, inputs):
