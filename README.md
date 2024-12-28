@@ -1,4 +1,4 @@
-## What's in here? _(to be polished ever and ever)_[^1]
+## What's in here?[^1]
 
 (1) You'll find material on causal inference for problems where one's aim is to measure the effects of some more or less controlled $D$ on some $Y$ in the presence of confounders $X$. Machine learning (ML) techniques will be discussed as I learn them, with as objective to show when they can be useful to causal inference. (2) In the different code comments I pay particular attention to differences between ML and Econometrics from the perspective of causal inference. To put it more clearly, my aim is not to compare ML and Econometrics for prediction $E(Y|X)$, but to see how ML methods can be used in Econometrics for estimating causal effects $E(Y(1)-Y(0)|D(X))$, where $D$ may be continuous. (3) You'll also find critical references on how AI is changing our perception of science, and the way we live in societies.
 
@@ -19,11 +19,10 @@ On (3):
 - Mallat, S., 2018. _Sciences des données et apprentissage en grande dimension_ &ndash; Leçons inaugurales du Collège de France, fayard.
 - Sadin, E., 2023. _La vie spectrale_ &ndash; Penser l'ère du métavers et des IA génératives, Grasset.
 
-## Plan _(building ...)_
+## Programs
 
-Program 1.
-Program 2.
-
-...
+- Perceptron (binary classification)
+- Linear regression with a test set
+- ...
 
 [^1]: __Acknowledgments.__ I am grateful to Alexandre Mutel.
