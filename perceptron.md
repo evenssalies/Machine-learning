@@ -97,7 +97,7 @@ for i in range(len(training_data)):
         )
 ```
 
-The Perceptron correctely predicts the labels in $y$. Errors are calculated as differences between labels and predictions. Final estimated values are $\hat{w}'= (0.20, 0.43)$ and $w_0=-0.60$. For entry say $i=3$, the weithed sum is $\hat{y}_3=0.20\times 1+0.43\times 1-.60\simeq 0.03$, which is greater than the threshold value of 0. Therefore, `predict` returns 1; there is no error. At the optimum weights, the full prediction $\hat{y}$ and `error` vector $\hat{e}$ are:
+The Perceptron correctely predicts the labels in $y$. Errors are calculated as differences between labels and predictions. Final estimated values are $\hat{w'}= (0.20, 0.43)$ and $w_0=-0.60$. For entry say $i=3$, the weithed sum is $\hat{y}_3=0.20\times 1+0.43\times 1-.60\simeq 0.03$, which is greater than the threshold value of 0. Therefore, `predict` returns 1; there is no error. At the optimum weights, the full prediction $\hat{y}$ and `error` vector $\hat{e}\equiv y-\hat{y}$ are:
 
 ```math
 \hat{y}=
@@ -109,7 +109,7 @@ The Perceptron correctely predicts the labels in $y$. Errors are calculated as d
         .03
         \end{array}    
     \right),\
-\hat{e}\equiv y-\hat{y}=
+\hat{e}=
     \left(
         \begin{array}{l}
         0-0 \\
