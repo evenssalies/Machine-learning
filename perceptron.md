@@ -1,7 +1,7 @@
 ## Perceptron
 ###   Evens Salies, v1: 02-12/2024
 
-Exemple de Perceptron pour une classification dichotomique
+Example of Perceptron for Binary Classification.
 
 ```python
 # perceptron.py
@@ -9,17 +9,17 @@ import numpy as np
 np.random.seed(21041971)
 ```
 
-Le constructeur `init` initialise le vecteur de poids $w$ et la constante (le biais) avec des valeurs aléatoires (la taille de $w$ est donnée par le tableau $x$ d'entrée). L'hyperparamètre de pas `learning_rate` est standard.
+The `__init__` constructor initializes the weight vector $w$ with random values and sets the constant (bias) to 0. The step size (hyperparameter), `learning_rate`, has a default value.
 
 ```python
 class Perceptron:
     def __init__(self, input_size, learning_rate = 0.1):
         self.weights = np.random.rand(input_size)
-        self.bias = np.random.rand()
+        self.bias = 0
         self.learning_rate = learning_rate
 ```
 
-Le seuil de prédiction est fixé à 0 étant donné les valeurs de $x$, les poids entre 0 et 1 et la constante. Pour chaque exmple $i$, $w_i'x_i+constante$ est comparé à la valeur 0. L'entraînement se fait sur un nombre standard d'itérations (à chaque itération on parcourt toutes les observations d'entraînement). L'algorithme d'optimisation est proche d'une __descente de gradient__ `(self.weights -= 2*self.learning_rate * error * training_data[i])`.
+The prediction threshold is set to 0 given the values of $x$, weights between 0 and 1, and the constant. For each example $i$, $w_i'x_i + \text{constant}$ is compared to the threshold. Training is done over a standard number of iterations (in each iteration, all training observations are processed). The optimization algorithm is similar to a __gradient descent__ `(self.weights -= 2 * self.learning_rate * error * training_data[i])`.
 
 ```python
     def predict(self, inputs):
@@ -34,35 +34,34 @@ Le seuil de prédiction est fixé à 0 étant donné les valeurs de $x$, les poi
                 self.weights += self.learning_rate * error * training_data[i]
                 self.bias += self.learning_rate * error
 ```
-
-Les données en entrée.
+Input data.
 
 ```python
 training_data = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 labels = np.array([0, 0, 0, 1])
 ```
 
-Héritage de classe.
+Class inheritance.
 
 ```python
 perceptron = Perceptron(input_size = 2)
 ```
 
-Jette un oeil à la valeur de départ de la constante.
+Take a look at the initial value of the constant.
 
 ```python
 print("\n")
 print(f"Initial constant: {perceptron.bias}\n")
 ```
 
-Entraînement, et valeur finale de la constante.
+Training, and final value of the constant.
 
 ```python
 perceptron.train(training_data, labels, epochs = 1000)
 print(f"Final constant: {perceptron.bias}\n")
 ```
 
-Prédicitons.
+Predictions.
 
 ```python
 for i in range(len(training_data)):
