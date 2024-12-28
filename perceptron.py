@@ -10,9 +10,9 @@ class Perceptron:
         self.bias = 0
         self.learning_rate = learning_rate
 
-    def predict(self, inputs):
+    def predict(self, inputs, threshold = 0):
         weighted_sum = np.dot(inputs, self.weights) + self.bias
-        return 1 if weighted_sum > 0 else 0
+        return 1 if weighted_sum > threshold else 0
 
     def train(self, training_data, labels, epochs):
         for _ in range(epochs):
@@ -26,13 +26,13 @@ training_data = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
 labels = np.array([0, 0, 0, 1])
 
 perceptron = Perceptron(input_size = 2)
-print("\n")
-print(f"Initial constant: {perceptron.bias}\n")
-
 perceptron.train(training_data, labels, epochs = 1000)
-print(f"Final constant: {perceptron.bias}\n")
 
+print("\n")
 for i in range(len(training_data)):
     prediction = perceptron.predict(training_data[i])
     weights_vector = perceptron.weights
-    print(f"Observation: {training_data[i]}, prediction: {prediction}, coefficient: {weights_vector}")
+    constant = perceptron.bias
+    print(
+        f"Observation: {training_data[i]}, prediction: {prediction}, coefficients: {weights_vector}, bias: {constant}"
+        )
