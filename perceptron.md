@@ -121,7 +121,7 @@ Observation: [0 1], prediction: 0, coefficients: [0.20163156 0.42922185], bias: 
 Observation: [1 0], prediction: 0, coefficients: [0.20163156 0.42922185], bias: -0.6
 Observation: [1 1], prediction: 1, coefficients: [0.20163156 0.42922185], bias: -0.6
 ```
-### Perceptron
+### Perceptron: Frank Rosenblatt
 
 It is a term coined by Frank Rosenblatt in the 1950s. In the study of pattern recognition, the **Perceptron** originally was a computer program that reproduces a nerve net system consisting of *data* (e.g., the information received by a retina), a *model* (an association area), and a *classifier* (one or more response units making predictions).[^1] Such program was quickly used for **artificial intelligence** in different researches, whereas Rosenblatt aimed at *"investigating the physical structures and neurodynamic principles which underlie "natural intelligence"* [...]; it is a "*brain model*" wrote Rosenblatt, "*not an invention for pattern recognition.*" Rosenblatt wanted to be useful to physiological psychologist.[^2]
 
