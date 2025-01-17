@@ -6,7 +6,7 @@ Perceptron for Binary Classification for the following data:
 ```math
 x\equiv
     \left(
-        \begin{array}{cc} 
+        \begin{array}{rc} 
             0 & 0 \\ 
             0 & 1 \\
             1 & 0 \\
