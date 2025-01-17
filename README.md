@@ -21,8 +21,10 @@ On (3):
 
 ## Programs
 
-- Perceptron (binary classification)
-- Linear regression with a test set
-- ...
+- Perceptron for a binary classification.
+- Linear regression with a test set (no validation set?).
+- Classification without a test set.
+- Classification with a test set.
+- Classification, Semi-Supervised Learning.
 
 [^1]: __Acknowledgments.__ I am grateful to Alexandre Mutel.
