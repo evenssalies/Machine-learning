@@ -6,8 +6,8 @@ Perceptron for Binary Classification for the following data:
 ```math
 x\equiv
     \left(
-        \begin{array}{rc} 
-            0 & 0 \\ 
+        \begin{array}{lc} 
+            0 & 0 \\
             0 & 1 \\
             1 & 0 \\
             1 & 1
