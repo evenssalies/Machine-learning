@@ -6,23 +6,15 @@ Perceptron for Binary Classification for the following data:
 ```math
 x\equiv
     \left(
-        \begin{array}{lc} 0 & 0 \\ 0 & 1 \\ 1 & 0 \\ 1 & 1 \end{array}
+        \begin{array}{cc} 0 & 0 \\ 0 & 1 \\ 1 & 0 \\ 1 & 1 \end{array}
     \right),\
 w\equiv
     \left(
-        \begin{array}{c}
-        w_1 \\
-        w_2
-        \end{array}    
+        \begin{array}{c} w_1 \\ w_2 \end{array}    
     \right),\
 y\equiv
     \left(
-        \begin{array}{c}
-        0 \\
-        0 \\
-        0 \\
-        1
-        \end{array}    
+        \begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \end{array}    
     \right)
 ```
 
