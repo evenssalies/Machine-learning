@@ -1,7 +1,7 @@
 ## Perceptron
 ###   Evens Salies, v1: 02-12/2024
 
-Perceptron for Binary Classification for the following data:
+Perceptron for binary classification on the following data:
 
 ```math
 x\equiv
