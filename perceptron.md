@@ -36,14 +36,12 @@ class Perceptron:
         self.learning_rate = learning_rate
 ```
 
-The prediction threshold is set _ad hoc_ to 0, given the values of $x$, weights between 0 and 1, and the constant. For each example $i$, prediction $x'_iw+w_0$ is compared to the threshold. Training is done over an ajustable number of iterations. The optimization algorithm is similar to a __gradient descent__,
+We are going to identify the model by updating the weigths a thousand times. We could try inputing different *ad hoc* values instead of using an updating rule. Prediction enters a Heaviside step function.[^1] This latter is plausible given the values of $y$ and $x$. Optimum weights will eventually be between 0 and 1. For each example $i$, prediction $x'_iw+w_0$ is compared to the threshold. If the model prediction is positive it is set to 1, but 0 otherwise.
 
-<p>
-<div style="text-align: center;">
-    `self.weights -= 2 * self.learning_rate * error * training_data[i]`.
-</div>
-<p>
- 
+Training is done over an ajustable number of iterations. The optimization algorithm (updating rule) below is different from a __gradient descent__. It is a simple update rule based on error. The rule for a gradient descent would be ```self.weights -= 2 * self.learning_rate * error * training_data[i]```, with weights (and constant) that are updated by moving in the direction that reduces the loss function (I'll write the maths later).
+
+Assume positive weigths and ignore the learning rate for the moment. In the Perceptron, the error $\hat{e}_i$ is $y_i-H(\hat{y}_i)$. If the error is negative, then this is because the weights are to high; therefore, we should decrease the weigths. The rule is ```self.weights += self.learning_rate * error * training_data[i]```, and the constant is updated accordingly.
+
 ```python
     def predict(self, inputs, threshold = 0):
         weighted_sum = np.dot(inputs, self.weights) + self.bias
@@ -57,7 +55,6 @@ The prediction threshold is set _ad hoc_ to 0, given the values of $x$, weights 
                 self.weights += self.learning_rate * error * training_data[i]
                 self.bias += self.learning_rate * error
 ```
-
 Input data and class inheritance.
 
 ```python
@@ -123,7 +120,8 @@ Observation: [1 1], prediction: 1, coefficients: [0.20163156 0.42922185], bias: 
 ```
 ### Perceptron: Frank Rosenblatt
 
-It is a term coined by Frank Rosenblatt in the 1950s. In the study of pattern recognition, the **Perceptron** originally was a computer program that reproduces a nerve net system consisting of *data* (e.g., the information received by a retina), a *model* (an association area), and a *classifier* (one or more response units making predictions).[^1] Such program was quickly used for **artificial intelligence** in different researches, whereas Rosenblatt aimed at *"investigating the physical structures and neurodynamic principles which underlie "natural intelligence"* [...]; it is a "*brain model*" wrote Rosenblatt, "*not an invention for pattern recognition.*" Rosenblatt wanted to be useful to physiological psychologist.[^2]
+It is a term coined by Frank Rosenblatt in the 1950s. In the study of pattern recognition, the **Perceptron** originally was a computer program that reproduces a nerve net system consisting of *data* (e.g., the information received by a retina), a *model* (an association area), and a *classifier* (one or more response units making predictions).[^2] Such program was quickly used for **artificial intelligence** in different researches, whereas Rosenblatt aimed at *"investigating the physical structures and neurodynamic principles which underlie "natural intelligence"* [...]; it is a "*brain model*" wrote Rosenblatt, "*not an invention for pattern recognition.*" Rosenblatt wanted to be useful to physiological psychologist.[^3]
 
-[^1]: White, B. W. (1963). Review of `Principles of Neurodynamics: Perceptrons and the Theory of Brain Mechanisms', by F. Rosenblatt. **The American Journal of Psychology**, 76(4), 705–707.
-[^2]: These quotes are taken from a 1961 book by Rosenblatt [Perceptrons and the Theory of Brain Mechanisms](ishttps://safari.ethz.ch/digitaltechnik/spring2018/lib/exe/fetch.php?media=neurodynamics1962rosenblatt.pdf). I did not read more than that part of the book, neither the first paper where one can find "Perceptron" would be [Rosenblatt, F. (1957). The perceptron &#8209; A perceiving and recognizing automaton. Cornell Aeronautical Laboratory Report No. 85-460-1](https://bpb-us-e2.wpmucdn.com/websites.umass.edu/dist/a/27637/files/2016/03/rosenblatt-1957.pdf). I wish I could find the time to do this some day ... when I'll retire 👴.
+[^1]: The Heaviside step function would take the value 1 for prediction greater than or equal to 0. In our Perceptron, the inequality is strict.
+[^2]: White, B. W. (1963). Review of `Principles of Neurodynamics: Perceptrons and the Theory of Brain Mechanisms', by F. Rosenblatt. **The American Journal of Psychology**, 76(4), 705–707.
+[^3]: These quotes are taken from a 1961 book by Rosenblatt [Perceptrons and the Theory of Brain Mechanisms](ishttps://safari.ethz.ch/digitaltechnik/spring2018/lib/exe/fetch.php?media=neurodynamics1962rosenblatt.pdf). I did not read more than that part of the book, neither the first paper where one can find "Perceptron" would be [Rosenblatt, F. (1957). The perceptron &#8209; A perceiving and recognizing automaton. Cornell Aeronautical Laboratory Report No. 85-460-1](https://bpb-us-e2.wpmucdn.com/websites.umass.edu/dist/a/27637/files/2016/03/rosenblatt-1957.pdf). I wish I could find the time to do this some day ... when I'll retire 👴.
