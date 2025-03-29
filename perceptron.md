@@ -24,7 +24,7 @@ y\equiv
     \right)
 ```
 
-A bias, which is actually a third weight, $w_0$, is considered. It is a term added to the prediction.
+A bias, which is actually a third weight, $w_0$, is considered. It is a term added to the prediction. Import the library and set the seed for pseudo-random number generation (this is useful for identical replications of the numbers created in this example)
 
 ```python
 # perceptron.py
