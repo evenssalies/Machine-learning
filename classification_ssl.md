@@ -9,7 +9,7 @@ In ML, the concept of SSL is used in situations where, for some $i$'s, $Y_i$ is 
 \\[12pt]
 ```
 
-Split the set of $n$ individuals $I$ into two subsets $I_U$ and $I_L$ where indices "U"  and "L" stand for "unlabelled" and "labeled". Without loss of generality, $I_U\equiv\lbrace 1,\ldots,m\rbrace$, $m<n$, and $I_L\equiv I\setminus I_U$. 
+Split the set of $n$ individuals $I$ into two subsets $I_U$ and $I_L$ where indices "U"  and "L" stand for "unlabelled" and "labeled". Without loss of generality, $I=I_U+I_L$, and $I_U\cap I_L\neq\emptyset$. 
 
 ### Data
 
