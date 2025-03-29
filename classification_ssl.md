@@ -2,11 +2,13 @@
 
 ### Evens Salies, v1: 01/2025
 
-In ML, the concept of SSL is used in situations where $y_i$ is not observed for some $(y_i, \mathbf{x}_i)$. In econometrics, such a situation occurs when $y_i$ is missing at random (MAR) or when there sample selection. E.g., $y$ is salary, $x_3$ tells whether $i$ works or not, $x_2$ is a dummy for training, and $x_1$ a bias:
+In ML, the concept of SSL is used in situations where $y_i$ is not observed unlike the $x_i$'s. In econometrics, such a situation occurs when $y_i$ is missing at random (MAR) or when there sample selection. E.g., $y$ is salary, $x_3$ tells whether $i$ works or not, $x_2$ is a dummy for training, and $x_1$ a bias:
 
 ```math
 (y_i, \mathbf{x}_i) = (y_i, 1, x_{2i}, x_{3i}).
 ```
+
+Split the set of $n$ individuals $I$ into two subsets $I_U$ and $I_L$ where indices "U"  and "L" stand for "unlabelled" and "labeled". Without loss of generality, $I_U\equiv\lbrace 1,\ldots,m\rbrace$, $m<n$, and $I_L\equiv I\setminus I_U$. 
 
 ### Data
 
