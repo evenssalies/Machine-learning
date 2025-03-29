@@ -32,7 +32,7 @@ import numpy as np
 np.random.seed(21041971)
 ```
 
-The `__init__` constructor initializes the weights vector $w$ with random values and the constant to 0. The step size (`learning_rate` hyperparameter), has the usual value.
+The `__init__` constructor initializes the weights vector $w$ with random values and the constant to 0. The step size (`learning_rate` hyperparameter), has the usual value, $1/10$:
 
 ```python
 class Perceptron:
