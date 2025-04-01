@@ -2,14 +2,14 @@
 
 ### Evens Salies, v1: 01/2025
 
-In ML, the concept of SSL is used in situations where, for some $i$'s, $Y_i$ is not observed. In econometrics, such a situation occurs when $Y_i$ is missing at random (MAR) or when there is sample selection. E.g., $Y$ is salary, $X$ tells whether $i$ has a job or not, $D$ is a dummy that takes the value 1 if $i$ has followed some training program:
+In ML, the concept of SSL is used in situations where, for some $i$'s, $Y_i$ is not observed. In econometrics, such a situation occurs e.g. when $Y_i$ is missing at random (MAR). But also, when there is sample selection. Imagine an innovation problem: $Y$ is sales, $X$ tells whether firm $i$ has transformed R&D into some marketed product, $D$ is a dummy that takes the value 1 if $i$ has received some subsidy:
 
 ```math
 (Y_i, D_i, X_i).
 \\[12pt]
 ```
 
-Split the set of $n$ individuals $I$ into two subsets $I_U$ and $I_L$ where indices "U"  and "L" stand for "unlabelled" and "labeled". Without loss of generality, $I=I_U+I_L$, and $I_U\cap I_L\neq\emptyset$. 
+We want to evaluate $D\rightarrow Y$. This is impossible for firms that have not completed their R&D program, regardless whether they received the subsidy or not. ML does not raise sample selection problems like this one. As stated in Géron (2022, p. 14), "you will often have plenty of unlabeled instances [$Y_i$ not observed], and few labeled instances." Split the set of $n$ firms $I$ into two subsets $I_U$ and $I_L$ where indices "U"  and "L" stand for "unlabelled" and "labeled". Without loss of generality, $I=I_U+I_L$, and $I_U\cap I_L\neq\emptyset$. 
 
 ### Data
 
