@@ -17,7 +17,7 @@ We want to evaluate $D_i\rightarrow Y_i$, given $X_i$.
 
 ML is more situable for problems like (2). As stated in Géron (2022, p. 14), "you will often have plenty of unlabeled instances [$Y_i$ not observed], and few labeled instances." 
 
-Split the set of $n$ firms $I$ into two subsets $I_U$ and $I_L$ where indices "U"  and "L" stand for "unlabelled" and "labeled". Without loss of generality, $I=I_U+I_L$, and $I_U\cap I_L\neq\emptyset$. We have $(Y_i, D_i, X_i)\forall i\in I_L$ and $(?, D_i, X_i)\forall i\in I_U$.
+Split the set of $n$ firms $I$ into two subsets $I_U$ and $I_L$ where indices "U"  and "L" stand for "unlabelled" and "labeled". Without loss of generality, $I=I_U+I_L$, and $I_U\cap I_L=\emptyset$. We have $(Y_i, D_i, X_i)\forall i\in I_L$ and $(?, D_i, X_i)\forall i\in I_U$.
 
 ### Data
 
