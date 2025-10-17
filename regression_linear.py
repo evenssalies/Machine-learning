@@ -8,18 +8,20 @@
 #   Data: 1590 OpenML dataset: Ron Kohavi, "Scaling Up the Accuracy of Naive-Bayes Classifiers: a Decision-Tree Hybrid",
 #       Proceedings of the Second International Conference on Knowledge Discovery and Data Mining, 1996
 
-import  matplotlib.pyplot as plt
-import  numpy as np
-import  pandas as pd
-import  os as os
+import matplotlib.pyplot as plt
+import pandas as pd
+import os as os
 
-from    sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression
 
 # First example: linear regression
 # 
 # Download and prepare the data
 data_root = "https://github.com/ageron/data/raw/main/"
 lifesat = pd.read_csv(data_root + "lifesat/lifesat.csv")
+
+# Short description
+lifesat.describe()
 
 # Handle missing values
 lifesat = lifesat.dropna()
@@ -72,16 +74,19 @@ Xy = Xy.dropna()
 X = Xy.drop(columns=[dataset.default_target_attribute])
 y = Xy[dataset.default_target_attribute]
 
+# Description sommaire
+X.describe()
+
 # Sélectionne un sous-ensemble de variables continues de X
 #  Les double-crochets permettent de sélectionner plusieurs colonnes et de garder le DataFrame  
 X = X[['age', 'capital-gain', 'capital-loss', 'hours-per-week']]
 
 # Target, label, classe, etc., à chaque discipline ses termes
-print(y.head())
+y.head()
 
 # Data, features, factors, etc., à chaque discipline ses termes
-print(X.head())
-print(X.columns)
+X.head()
+X.columns
 print(f"X a {X.shape[0]} observations et {X.shape[1]} variables.")
 
 # Classification KNN

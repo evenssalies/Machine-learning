@@ -1,4 +1,6 @@
 # Scikit-learn: méthodes fit(), predict(), score()
+#
+# Je distingue les données d'apprentissage de celles test
 #  
 # Géron (2022, pp. 103-174)
 #   Ch. 3 "Classification"
@@ -35,16 +37,38 @@ X_train = X_train[['age', 'capital-gain', 'capital-loss', 'hours-per-week']]
 
 #   Vérifie les dimensions des tableaux
 print(f"\nX_test a {X_test.shape[0]} observations et {X_test.shape[1]} variables.")
-print(f"X_test a {X_train.shape[0]} observations et {X_train.shape[1]} variables.\n")
+print(f"X_train a {X_train.shape[0]} observations et {X_train.shape[1]} variables.\n")
 
-#   Classificateur
+#   Classe
 from sklearn.neighbors import KNeighborsClassifier
+
+#   Instanciation du modèle avec le classificateur (KNN) de la classe
 model = KNeighborsClassifier()
 
-#   On a juste besoin d'entrainer le modèle
+#   Entrainement du modèle via l'appel de la méthode fit
 _ = model.fit(X_train, y_train)
 
-#   Score du modèle : taux de succès moyen ou performance de généralisation/prédictive/statistique
+#   Evaluation du modèle : taux de succès moyen ou performance de généralisation/prédictive/statistique
 accuracy = model.score(X_test, y_test)
 model_name = model.__class__.__name__
 print(f"La qualité du modèle {model_name} est de {accuracy:.3f}")
+
+from sklearn.metrics import classification_report
+y_pred = model.predict(X_test)
+print(classification_report(y_test, y_pred))
+
+#   Calcul manuel du rappel dans le cas "<=50K"
+print(f"TP: {((y_pred == '<=50K') & (y_test == '<=50K')).sum()}")
+print(f"FN: {((y_pred == '>50K') & (y_test == '<=50K')).sum()}")
+print(f"TP+FN: {(y_test == '<=50K').sum()}")
+print(f"Rappel calculé manuellement: {6326 / (6326 + 516):.3f}")
+
+#   Calcul manuel du rappel dans le cas ">50K"
+print(f"TP: {((y_pred == '>50K') & (y_test == '>50K')).sum()}")
+print(f"FN: {((y_pred == '<=50K') & (y_test == '>50K')).sum()}")
+print(f"TP+FN: {(y_test == '>50K').sum()}")
+print(f"Rappel calculé manuellement: {940 / (940 + 1263):.3f}")
+
+#   On retrouve ces nombres dans la matrice confusion
+from sklearn.metrics import confusion_matrix
+confusion_matrix(y_test, y_pred)

@@ -1,5 +1,7 @@
-# Scikit-learn: méthodes fit(), predict(), score()
-#  
+# Scikit-learn: méthodes fit(), predict()
+# 
+# Je ne fais pas de distinction apprentissage/test ici, juste pour illustrer fit() et predict()
+#
 # Géron (2022, pp. 103-174)
 #   Ch. 3 "Classification"
 #   Data : "lifesat.csv"
