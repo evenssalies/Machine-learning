@@ -44,9 +44,9 @@ class Perceptron:
 
 We are going to identify the model by updating the weigths a thousand times. We could try inputing different *ad hoc* values instead of using an updating rule. Prediction enters a Heaviside step function.[^3] This latter is plausible given the values of $y$ and $x$. Optimum weights will eventually be between 0 and 1. For each example $i$, prediction $x'_iw+w_0$ is compared to the threshold. If the model prediction is positive it is set to 1, but 0 otherwise.
 
-Training is done over an ajustable number of iterations. The optimization algorithm (updating rule) below is different from a __gradient descent__. It is a simple update rule based on error. The rule for a gradient descent would be ```self.weights -= 2 * self.learning_rate * error * training_data[i]```, with weights (and constant) that are updated by moving in the direction that reduces the loss function (I'll write the maths later).
+Training is done over an ajustable number of iterations. The optimization algorithm is different from a __gradient descent__. It is a _simple update rule based on the error_: ```self.weights += self.learning_rate * error * training_data[i]``` whereas the rule for a gradient descent would be ```self.weights -= 2 * self.learning_rate * error * training_data[i]```, with weights (and constant) that are updated by moving in the direction that reduces the loss function.
 
-Assume positive weigths and ignore the learning rate for the moment. In the Perceptron, the error $\hat{e}_i$ is $y_i-H(\hat{y}_i)$. If the error is negative, then this is because the weights are to high; therefore, we should decrease the weigths. The rule is ```self.weights += self.learning_rate * error * training_data[i]```, and the constant is updated accordingly.
+Assume positive weigths and ignore the learning rate for the moment. In the Perceptron, the error $\hat{e}_i$ is $y_i-H(\hat{y}_i)$. If the error is negative, then this is because the weights are to high; therefore, we should decrease the weigths. The rule is ```self.weights += self.learning_rate * error * training_data[i]```, and the constant is updated accordingly. Note that ```self.weights```, a NumPy array, automatically updates all weight (here 2) components at once through vectorization. We loop over the number of training examples.
 
 ```python
     def predict(self, inputs, threshold = 0):
